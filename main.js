@@ -1,6 +1,8 @@
 
 const btnGet = document.querySelector('.get-token')
 
+const btnDelete = document.querySelector('.delete')
+
 const urlInfor = "https://api.github.com/user";
 
 const urlRepos = "https://api.github.com/user/repos";
@@ -82,4 +84,27 @@ function SetBtnDel (btnsGet, names) {
         })
     }
 }
+
+
+btnDelete.addEventListener("click", async () => {
+    alert("Are you sure?")
+    const token = document.querySelector(".token-input").value;
+    reposDel.forEach(async (repo) => {
+        await fetch("https://api.github.com/repos/" + repo, {
+            method: "DELETE",
+            headers: {
+                // xxx is your token
+                // Get token: https://github.com/settings/tokens/new
+                Authorization: "Bearer " + token,
+            },
+        })
+        .then(res => {
+            if(res.ok == true) {
+                alert("Delete successfully!")
+            }
+            console.log(res);
+        });
+        
+    });
+});
 
