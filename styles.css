@@ -166,6 +166,17 @@ body {
     display: inline-block;
 }
 
+.repo-del {
+    padding: 3px 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    border: #30363d solid 2px;
+    border-radius: 8px;
+    background-color: #091831;
+    font-size: 12px;
+    cursor: pointer;
+}
+
 .delete {
     width: 85%;
     margin-top: 10px;
